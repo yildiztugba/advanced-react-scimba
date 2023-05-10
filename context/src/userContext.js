@@ -4,9 +4,12 @@ const {Provider,Consumer} = React.createContext()
 
 class userContextProvider extends React.Component(){
 render(){
+    state={
+        username: "tugba"
+    }
     return(
-        <Provider>
-            this.props.children
+        <Provider value={this.state.username}>
+            { this.props.children}
         </Provider>
     )
 }
