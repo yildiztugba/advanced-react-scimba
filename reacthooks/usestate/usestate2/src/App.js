@@ -5,8 +5,11 @@ function App() {
   const [inputData, setInputData] = useState({firstName: "",lastName:"" })
   const [contactInfo, setContactInfo] = useState([])
 
-  function handleSubmit(event){
 
+
+  function handleSubmit(event){
+    event.preventDefault()
+    setContactInfo(prev=>([...prev,inputData]))
   }
 
   function handleClick(event){
@@ -18,6 +21,7 @@ function App() {
       )
   }
 
+  const contact= contactInfo.map(info=><h1 key={contactInfo.firstName + contactInfo.lastName}>{info.firstName}{info.lastName}</h1>)
 
   return (
     <div className="App">
@@ -36,8 +40,9 @@ function App() {
         />
         <br />
         <button>Add contact</button>
-
+      
       </form>
+        {contact}
     </div>
   );
 }
