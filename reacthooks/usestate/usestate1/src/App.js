@@ -9,10 +9,14 @@ function App() {
   function increment(){
     setCount(prev=>prev+1)
   }
+  function decrement(){
+      setCount(prev=>prev-1)
+  }
   return (
     <div className="App">
      <h1>{count}</h1>
      <button onClick={increment}>Increment</button>
+     <button onClick={decrement}>Increment</button>
     </div>
   );
 }
