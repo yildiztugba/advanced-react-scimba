@@ -4,15 +4,16 @@ const {Provider,Consumer} = React.createContext()
 
 class userContextProvider extends React.Component(){
 render(){
-    state={
+    this.state={
         username: "tugba"
     }
 
-    handleClick = (username)=>{
-    setState(username)
+   function handleClick (username){
+    this.setState(username)
     }
+
     return(
-        <Provider value={{username, handleClick}}>
+        <Provider value={{username: this.state.username, handleClick}}>
             { this.props.children}
         </Provider>
     )
