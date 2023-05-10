@@ -7,8 +7,12 @@ render(){
     state={
         username: "tugba"
     }
+
+    handleClick = (username)=>{
+    setState(username)
+    }
     return(
-        <Provider value={this.state.username}>
+        <Provider value={{username, handleClick}}>
             { this.props.children}
         </Provider>
     )
