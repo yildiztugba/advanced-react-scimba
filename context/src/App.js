@@ -1,27 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Header from "./Header"
 import {userContextConsumer} from "./userContext"
 class App extends React.Component {
+  
+  state={
+      newUsername: ""
+    }
+  handleChange =(e)=>{
+      const {name,value} = e.target
+      this.setState({[name]: value})
+
+    }
   render(){
+    
       return (
-          <div className="App">
+          <div >
             <Header />
           <userContextConsumer>
-               { (context)=>{
+              { ({username, handleClick})=>(
                         <main>
+                          <p>No new notification, {username}</p>
                           <input 
                           type="text"
-                          name="username"
+                          name="newUsername"
                           placeholder="New username"
-                          value=""
-                          onChange=""
+                          value={this.state.newUsername}
+                          onChange={this.handleChange}
                         />
-                          <button onClick="">Change username </button>
+                          <button onClick={()=>handleClick(this.state.newUsername)}>Change username </button>
 
                           </main>
-                }}
+              )}
                       
                       </userContextConsumer>
           </div>

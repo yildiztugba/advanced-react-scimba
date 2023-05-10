@@ -4,9 +4,9 @@ function Header (){
     return(
         <userContextConsumer>
             {
-                ({username})=>{
+                ({username})=>(
                 <p>Welcome, {username}!</p> 
-                }
+                )
             }
         </userContextConsumer>
     )
