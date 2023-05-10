@@ -7,6 +7,18 @@ class App extends React.Component {
       return (
           <div className="App">
             <Header />
+
+            <main>
+                <input 
+                  type="text"
+                  name="username"
+                  placeholder="New username"
+                  value=""
+                  onChange=""
+                />
+                <button onClick="">Change username </button>
+
+            </main>
           </div>
         );
   }
