@@ -22,4 +22,4 @@ class userContextProvider extends React.Component(){
 }
 
 
-export  {userContextProvider, Consumer as userContextConsumer }
+export  {userContextProvider, Consumer  }

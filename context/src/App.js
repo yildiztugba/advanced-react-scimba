@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Header from "./Header"
-import {userContextConsumer} from "./userContext"
+import {Consumer} from "./userContext"
 class App extends React.Component {
   
   state={
@@ -17,8 +17,9 @@ class App extends React.Component {
       return (
           <div >
             <Header />
-          <userContextConsumer>
+          <Consumer>
               { ({username, handleClick})=>(
+                
                         <main>
                           <p>No new notification, {username}</p>
                           <input 
@@ -28,12 +29,13 @@ class App extends React.Component {
                           value={this.state.newUsername}
                           onChange={this.handleChange}
                         />
+                        {console.log(username)}
                           <button onClick={()=>handleClick(this.state.newUsername)}>Change username </button>
 
                           </main>
               )}
                       
-                      </userContextConsumer>
+                      </Consumer>
           </div>
         );
   }
